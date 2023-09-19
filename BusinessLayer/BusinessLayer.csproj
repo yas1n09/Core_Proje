@@ -19,7 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Concrete\" />
     <Folder Include="ValidationRules\" />
   </ItemGroup>

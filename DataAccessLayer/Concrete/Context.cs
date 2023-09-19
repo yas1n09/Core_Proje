@@ -1,5 +1,4 @@
 ﻿using EntityLayer.Concrete;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context : IdentityDbContext<WriterUser, WriterRole, int>
+    internal class Context : DbContext
     {
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-07T8MF2\\MSSQLSERVER01;database=CoreProjeDB;integrated security=true");
+            optionsBuilder.UseSqlServer("Server=(LocalDb)\\MSSQLLocalDB;initial catalog=Core_Proje; Integrated Security=true;");
         }
+
 
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
@@ -30,5 +31,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Test1> Test1s { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<WriterMessage> WriterMessages { get; set; }
+
+
     }
 }
