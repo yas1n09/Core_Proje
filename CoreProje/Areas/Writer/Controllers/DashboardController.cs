@@ -26,7 +26,7 @@ namespace Core_Proje.Areas.Writer.Controllers
             ViewBag.v = values.Name + " " + values.Surname;
 
             //Weather APi
-            string api = "14ad2aba611dbef9c504b82a127794c5";
+            string api = "eccae1e5438f85dfc27b69af930a4651";
             string connection = "http://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=" + api;
             XDocument document = XDocument.Load(connection);
             ViewBag.v5 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
@@ -42,5 +42,5 @@ namespace Core_Proje.Areas.Writer.Controllers
     }
 }
 /*
- http://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=14ad2aba611dbef9c504b82a127794c5
+ http://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=eccae1e5438f85dfc27b69af930a4651
  */
